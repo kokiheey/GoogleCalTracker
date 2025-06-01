@@ -7,6 +7,54 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <ComboBox Grid.Row ="1" Grid.Column="1" x:Name="cmbEventType" HorizontalAlignment="Stretch" Height="50"
+                   VerticalAlignment="Top" Margin="0, 20, 0, 0">
+        </ComboBox>
+        <Viewbox Grid.Column="1">
+            <Button x:Name="btnEventTypeAdd"  VerticalAlignment="Top"  Content="Add new event"
+                Click="btnEventTypeAdd_Click"/>
+        </Viewbox>
+        <TextBlock x:Name="txtStopwatch" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="30,20"/>
 
+        <Grid Grid.Row="1">
+            <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="50,50">
+                <Image Source="play-pause-icon.png" Stretch="Uniform"/>
+            </Button>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Viewbox Grid.Column="0">
+                <Button x:Name="btnConfirmEvent" Content="Confirm Event"/>
+            </Viewbox>
+
+            <Viewbox Grid.Column="1" Margin="20, 0">
+                <Button x:Name="btnCancelEvent" Content="Cancel Event" Height="40"/>
+            </Viewbox>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Viewbox Grid.Column="0" Margin="10, 0">
+                <Button Content="Delete Event"/>
+            </Viewbox>
+        </Grid>
     </Grid>
 </Window>

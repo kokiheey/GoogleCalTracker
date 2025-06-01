@@ -5,6 +5,15 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <StartupObject>GoogleCalTracker.App</StartupObject>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="play-pause-icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="play-pause-icon.png" />
+  </ItemGroup>
 
 </Project>
