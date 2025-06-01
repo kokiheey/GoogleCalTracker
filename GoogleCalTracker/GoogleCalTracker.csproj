@@ -13,6 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Google.Apis.Calendar.v3" Version="1.69.0.3746" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="play-pause-icon.png" />
   </ItemGroup>
 

@@ -5,7 +5,7 @@ namespace GoogleCalTracker
     public partial class MainWindow : Window
     {
 
-        EventItem selectedItem;
+        EventType? selectedEventType;
 
         public MainWindow()
         {

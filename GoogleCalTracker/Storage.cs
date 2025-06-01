@@ -11,17 +11,17 @@ namespace GoogleCalTracker
     {
         public static string storePath = "items.json";
 
-        public static void Save(List<EventItem> items)
+        public static void Save(List<EventType> items)
         {
             string json = JsonSerializer.Serialize(items);
             File.WriteAllText(storePath, json);
         }
 
-        public static List<EventItem> Load()
+        public static List<EventType> Load()
         {
-            if (!File.Exists(storePath)) return new List<EventItem>();
+            if (!File.Exists(storePath)) return new List<EventType>();
             string json = File.ReadAllText(storePath);
-            return JsonSerializer.Deserialize<List<EventItem>>(json) ?? new List<EventItem>();
+            return JsonSerializer.Deserialize<List<EventType>>(json) ?? new List<EventType>();
         }
     }
 }
