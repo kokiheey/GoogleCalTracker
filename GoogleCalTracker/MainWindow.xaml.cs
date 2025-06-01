@@ -4,6 +4,9 @@ namespace GoogleCalTracker
 {
     public partial class MainWindow : Window
     {
+
+        EventItem selectedItem;
+
         public MainWindow()
         {
             InitializeComponent();
