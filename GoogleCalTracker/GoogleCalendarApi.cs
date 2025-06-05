@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Management;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -40,6 +41,7 @@ namespace GoogleCalTracker
         public static async Task CreateEvent(EventType eventType, DateTime startTime, DateTime endTime)
         {
             UserCredential credential;
+            Config config = ConfigLoader.GetConfig();
 
             using (var stream = new FileStream("credentials.json", FileMode.Open, FileAccess.Read))
             {
@@ -62,9 +64,36 @@ namespace GoogleCalTracker
                 Start = new EventDateTime()
                 {
                     DateTime = startTime,
-                    TimeZone = 
-                }
+                    TimeZone = config.TimeZone,
+
+                },
+                End = new EventDateTime()
+                {
+                    DateTime = endTime,
+                    TimeZone = config.TimeZone,
+                },
+                ColorId = eventType.colorId,
             };
+
+            if(eventType.tags != null)
+            {
+                Dictionary<string, string> tg = new Dictionary<string, string>();
+                int ind = 0;
+                foreach (string tag in eventType.tags)
+                {
+                    tg["t" + ind.ToString()] = tag;
+                    ind++;
+                }
+                newEvent.ExtendedProperties = new Event.ExtendedPropertiesData()
+                {
+                    Private__ = tg
+                };
+            }
+
+            var request = service.Events.Insert(newEvent, config.calendarId);
+            var response = await request.ExecuteAsync();
+
+            Console.WriteLine($"succes: {response.HtmlLink}");
         }
 
     }

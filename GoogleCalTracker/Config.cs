@@ -9,7 +9,10 @@ namespace GoogleCalTracker
 {
     public class Config
     {
-        public string TimeZone;
-        
+        public string TimeZone = "Serbia/Belgrade";
+
+        public List<EventType> eventTypes;
+
+        public string calendarId;
     }
 }

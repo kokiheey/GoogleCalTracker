@@ -12,6 +12,8 @@ namespace GoogleCalTracker
 
         public string Name { get; set; }
 
+        public string colorId;
+
         public List<string>? tags { get; set; }
 
         public EventType(int Id, string Name, List<string> ? tags)
