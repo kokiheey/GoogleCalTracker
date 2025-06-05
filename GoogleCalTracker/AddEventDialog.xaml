@@ -6,11 +6,28 @@
         xmlns:local="clr-namespace:GoogleCalTracker"
         mc:Ignorable="d"
         WindowStartupLocation="CenterOwner"
+        Loaded="Window_Loaded"
         Title="Add Event" Height="200" Width="300">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="txbEventName" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <TextBox x:Name="txbEventDescription" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+        <Viewbox Grid.Row="2" Grid.Column="1">
+            <Button x:Name="btnAcceptEvent" Content="Confirm new Event"/>
+        </Viewbox>
+
+        <ComboBox x:Name="cmbColors" Grid.Row="1" Grid.Column="0">
+            
+        </ComboBox>
     </Grid>
 </Window>

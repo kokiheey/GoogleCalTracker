@@ -15,6 +15,8 @@ namespace GoogleCalTracker
         private void btnEventTypeAdd_Click(object sender, RoutedEventArgs e)
         {
             //Show dialogue
+            var dialog = new AddEventDialog();
+            dialog.ShowDialog();
         }
 
     }

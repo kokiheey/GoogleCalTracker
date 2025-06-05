@@ -27,5 +27,11 @@ namespace GoogleCalTracker
             }
         }
 
+        public EventType()
+        {
+            this.Id = 0; this.Name = "default Event";
+            colorId = "1";
+        }
+
     }
 }
